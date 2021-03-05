@@ -81,7 +81,7 @@ const deleteUser = (request, response) => {
     .query("DELETE FROM users WHERE id=$1", [id])
     .then((results) => response.status(200).send(`User delete with ID: ${id}`))
     .catch((error) => {
-      error;
+      throw error;
     });
 };
 
